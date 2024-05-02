@@ -1,9 +1,10 @@
 import { useState } from 'react';
-import { Button, StyleSheet, Text, View, ScrollView, FlatList } from 'react-native';
+import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
+import { Button } from 'react-native-web';
 
 export default function App() {
   const[enteredGoalText, setEnteredGoalText]= useState('')
-  const[goals, setGoals]= useState([])
+  const[goals, setGoals]= useState('')
 
   function handleInputGoal(enteredText) {
     console.log(enteredText)
