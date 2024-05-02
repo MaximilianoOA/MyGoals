@@ -26,7 +26,7 @@ export default function App() {
         />
         <Button
           title='Add Goal'
-          color={'#CAA6A6'}
+          color={'#704264'}
           onPress={handleAddGoal}
         />
 
