@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
-import { Button } from 'react-native-web';
 
 export default function App() {
   const[enteredGoalText, setEnteredGoalText]= useState('')
@@ -25,7 +24,7 @@ export default function App() {
           placeholder = 'Your Goal!'
           onChangeText={handleInputGoal}
         />
-        <button
+        <Button
           title='Add Goal'
           color={'#CAA6A6'}
           onPress={handleAddGoal}
