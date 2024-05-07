@@ -5,7 +5,7 @@ function GoalInput({onAddGoal}){
     const [enteredGoalText, setEnteredGoalText] = useState('')
 
     function HandleInputGoal(enteredText){
-        console.log(enteredText)
+        //console.log(enteredText)
         setEnteredGoalText(enteredText)
     }
 
