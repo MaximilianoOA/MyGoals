@@ -1,53 +1,38 @@
-import { useState } from 'react';
+import { useState } from 'react'
 import { Button, StyleSheet, Text, TextInput, View, ScrollView, FlatList } from 'react-native';
-import GoalInput from './assets/components/GoalInput';
-import GoalItem from './assets/components/GoalItem';
+import GoalItem from './components/GoalItem';
+import GoalInput from './components/GoalInput';
 
 export default function App() {
-  const[enteredGoalText, setEnteredGoalText]= useState('')
-  const[goals, setGoals]= useState('')
+  const [goals, setGoals] = useState([])
 
-  
 
-  function handleAddGoal(){
-    console.log(entredGoal)
-    setGoals(() => [ goals, {text: enteredGoalText, key: Math.random().toString()}])
+  function handleAddGoal(enteredGoalText) {
+    setGoals(() => [...goals, {text: enteredGoalText, key: Math.random().toString()}])
+    console.log(goals)
   }
 
+  function handleDeleteGoal(id){
+    console.log('DELETE')
+    const deleteGoal = goals.filter((goal) => {return goal.key !== id} )
+    setGoals(deleteGoal)
+  }
 
+  
   return (
     <View style={styles.container}>
-      
-      <View style={styles.inputContainer}>
-        <TextInput 
-          style={styles.textInput} 
-          placeholder='Your Goal!'
-          onChangeText={handleInputGoal}
-        />
-        <Button 
-          title="Add Goal" 
-          color={'#A3FFD6'}
-          onPress={handleAddGoal}
-        />
-      </View> 
-
-
       <GoalInput
         onAddGoal={handleAddGoal}
       />
       <View style={styles.goalsContainer}>
         <FlatList
           data={goals}
-          renderItem={(ItemData) => {
-
+          renderItem={ (itemData) => {
             return(
-              <View style={styles.goalsItem} >
-             <Text style={styles.goalText}>{itemData.item.text}</Text>
-              </View>
-              
               <GoalItem 
                 itemData={itemData}
                 onDeleteItem={handleDeleteGoal} 
+                id={itemData.item.key}
               />
             )
           }}
