@@ -24,7 +24,7 @@ const styles = StyleSheet.create({
     margin: 8,
     padding: 8,
     borderRadius: 6,
-    backgroundColor: '#8576FF',
+    backgroundColor: '#C7B7A3',
     color: 'white'
   },
   goalText: {

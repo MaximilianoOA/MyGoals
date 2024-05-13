@@ -26,7 +26,7 @@ function GoalInput({onAddGoal}) {
         />
         <Button 
           title="Add Goal" 
-          color={'#A3FFD6'}
+          color={'#49243E'}
           onPress={addGoalHandler}
         />
       </View>
@@ -43,7 +43,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginBottom: 20,
     borderBottomWidth: 1,
-    borderBottomColor: '#7BC9FF'
+    borderBottomColor: '#AF8260'
   },
   textInput: {
     borderWidth: 1,
